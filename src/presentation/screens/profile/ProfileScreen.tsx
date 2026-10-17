@@ -5,6 +5,7 @@ import { useProfileStore } from '../../store';
 export const ProfileScreen = () => {
   const name = useProfileStore(state => state.name);
   const email = useProfileStore(state => state.email);
+  const changeProfile = useProfileStore(state => state.changeProfile);
 
   return (
     <View style={styles.container}>
@@ -27,6 +28,13 @@ export const ProfileScreen = () => {
         }
       >
         <Text>Cambiar email</Text>
+      </Pressable>
+
+      <Pressable
+        style={styles.primaryButton}
+        onPress={() => changeProfile('John Doe', 'john.doe@yopmail.com')}
+      >
+        <Text>Regresar a John</Text>
       </Pressable>
     </View>
   );
