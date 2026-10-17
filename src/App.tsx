@@ -1,7 +1,12 @@
-import { HomeScreen } from './presentation/screens';
+import { NavigationContainer } from '@react-navigation/native';
+import { BottomTabsNavigator } from './presentation/routes';
 
 function App() {
-  return <HomeScreen />;
+  return (
+    <NavigationContainer>
+      <BottomTabsNavigator />
+    </NavigationContainer>
+  );
 }
 
 export default App;
