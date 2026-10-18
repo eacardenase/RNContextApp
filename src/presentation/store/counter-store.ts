@@ -10,8 +10,7 @@ export const useCounterStore = create<CounterState>()((set, get) => ({
   count: 0,
 
   incrementBy: value => {
-    let current = get().count;
-
-    set({ count: current + value });
+    // set(state => ({ count: state.count + value }));
+    set({ count: get().count + value });
   },
 }));
